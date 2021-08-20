@@ -14,13 +14,13 @@
     <div class="wrapper">
         <div class="sample">
           <form>
-          <div class="progress">
-            <div class="progress-bar"></div>
+          <div class="progress" >
+            <div class="progress-bar" role="progressbar" v-bind:style="prBar"></div>
           </div>
           <div>
             <div class="form-group" v-for="(feald, i) in info" v-bind:key="i" >
-              <label>{{feald.name}}{{feald.pattern}}</label>
-              <input type="text" class="form-control" v-model="feald.value" ref="inputPattern" v-on:input="patternCheck(feald, i)">
+              <label v-bind:class="validateClass(feald, i)">{{feald.name}}</label>
+              <input type="text" class="form-control" v-model="feald.value" ref="inputPattern" v-on:input="patternCheck(feald, i)" >
             </div>
           </div>
           <button class="btn btn-primary">
@@ -216,6 +216,11 @@ export default {
         // {v: 7}
       ],
       fSize: 10,
+      prBar: {
+        width: '30%'
+      },
+      sumPart: 0,
+      progressStyleWidth: "10%",
       myStyle: {
         color: 'yellow'
         
@@ -250,32 +255,50 @@ export default {
 						value: '',
 						pattern: /.+/
 					}
-				]
+				],
+      
 
 
     }
   },
   methods: {
 
-    // patternCheck({target:{value, pattern, validity}}){
-    //   // console.log(value);
-    //   // console.log(pattern);
-    //   // let regex = new RegExp(pattern)
-    //   // console.log(regex);
-    //   // console.log(regex.test('ddd'));
-    //   console.log(validity);
-    //   console.log(pattern);      
+    styleF() {
+      // console.log(this.progressStyleWidth, 'fss');
 
+      this.prBar = {
+        width: this.progressStyleWidth
+      }
+      
+    },
 
-    //   // let regex2 = new RegExp(pattern)
-    //   // console.log(regex2);
-    //   // console.log(regex2.test('ggg'));
-    //   // console.log(regex2.test(value));
-    // },
+    validateClass(f, i){
+      return{
+        'red': !this.info[i].valid
+      }
+    },
     patternCheck(e, i){
-      console.log(e);
-      console.log(i);
 
+      console.log(this.info[i].valid = this.info[i].pattern.test(this.info[i].value), 'uuuu');
+      
+      if(this.info[i].valid = this.info[i].pattern.test(this.info[i].value)){
+        // let max = 100;
+        // let onePart = max/this.info.length
+        // console.log(onePart, 'part');
+        // let sumPart = 0
+        // sumPart += onePart 
+        // this.progressStyleWidth = sumPart + '%'
+        // this.styleF()
+      }
+        let max = 100;
+        let onePart = max/this.info.length
+        console.log(onePart, 'part');
+        this.sumPart
+        sumPart += onePart 
+        this.progressStyleWidth = sumPart + '%'
+        this.styleF()
+
+      
     },
 
     scroll (e) {
@@ -336,6 +359,8 @@ export default {
 
   },
   computed: {
+
+
     myClass(){
       console.log('mMMMM');
       return {
@@ -383,6 +408,7 @@ export default {
       this.$refs.fInput.focus()
     })
     console.log(app, 'mounted');
+    
     },
 
   beforeUpdate() {
@@ -404,6 +430,7 @@ export default {
 </script>
 
 <style lang='scss'>
+
 
 .fzBig {
   font-size: 40px;
