@@ -18,8 +18,10 @@
             <div class="progress-bar" role="progressbar" v-bind:style="prBar"></div>
           </div>
           <div>
+            
             <div class="form-group" v-for="(feald, i) in info" v-bind:key="i" >
-              <label v-bind:class="validateClass(feald, i)">{{feald.name}}</label>
+              <label >{{feald.name}}</label>
+              <span v-if="feald.activated" v-bind:class="validateClass(feald, i)">!</span>
               <input type="text" class="form-control" v-model="feald.value" ref="inputPattern" v-on:input="patternCheck(feald, i)" >
             </div>
           </div>
@@ -282,21 +284,18 @@ export default {
       console.log(this.info[i].valid = this.info[i].pattern.test(this.info[i].value), 'uuuu');
       
       if(this.info[i].valid = this.info[i].pattern.test(this.info[i].value)){
-        // let max = 100;
-        // let onePart = max/this.info.length
-        // console.log(onePart, 'part');
-        // let sumPart = 0
-        // sumPart += onePart 
-        // this.progressStyleWidth = sumPart + '%'
-        // this.styleF()
-      }
         let max = 100;
-        let onePart = max/this.info.length
-        console.log(onePart, 'part');
-        this.sumPart
-        sumPart += onePart 
+        let par = this.validCheck();
+        console.log(par, 'parrrr');
+        let sumPart = par/this.info.length * 100
+        console.log(sumPart, 'part');
+        
         this.progressStyleWidth = sumPart + '%'
         this.styleF()
+      }
+       this.info[i].activated = true
+
+      // this.validCheck()
 
       
     },
@@ -355,10 +354,25 @@ export default {
       console.log(this.msg = this.v++);
       console.log(e);
       console.log(app)
-    }
+    },
+    validCheck() {
+      let ready = 0 
+      this.info.forEach((e)=>{
+        if(e.valid){
+          ready++
+          console.log(ready);
+        }
+       
+      })
+       return ready
+    },
+
+
 
   },
   computed: {
+
+   
 
 
     myClass(){
