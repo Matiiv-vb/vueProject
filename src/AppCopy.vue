@@ -13,6 +13,7 @@
               v-bind:value="feald.value" 
               v-bind:valid="feald.valid" 
               v-bind:pattern="feald.pattern" 
+              v-bind:activatedfff="feald.activated" 
               v-on:inputss="feald.value = $event"
               v-on:dia="diaMethod(feald, i)"
               
@@ -81,6 +82,7 @@ export default {
   methods: {
     diaMethod(f, i) {
       console.log(f.valid = f.pattern.test(f.value), "diaMethodddd");
+      f.activated = true
       return{
         'red': !this.info[i].valid
       }

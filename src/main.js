@@ -15,28 +15,8 @@ Vue.component('button-counter', {
     }
   },
   methods: {
-    patternCheck(e, i){
-      
-      console.log(e, "EEE");
-      console.log(this.$emit('dia'), 'IIIi');
-      // console.log(this.valid = this.pattern.test(this.value), 'uuuu');
-      
-      // if(this.info[i].valid = this.info[i].pattern.test(this.info[i].value)){
-      //   let max = 100;
-      //   let par = this.validCheck();
-      //   console.log(par, 'parrrr');
-      //   let sumPart = par/this.info.length * 100
-      //   console.log(sumPart, 'part');
-        
-      //   this.progressStyleWidth = sumPart + '%'
-      //   this.styleF()
-      // }
-      //   this.info[i].activated = true
 
-      // this.validCheck()
 
-      
-    },
   },
   computed: {
 
@@ -48,10 +28,10 @@ Vue.component('button-counter', {
     },
 
   },
-  props: ['name', "value", 'valid', 'pattern'],
+  props: ['name', "value", 'valid', 'pattern', 'activatedfff'],
   template: `<div>
             <div class="form-group"   >
-              <label >{{name}} <span v-bind:class="validateClass"> !!! </span>  </label>
+              <label >{{name}} <span v-bind:class="validateClass" v-show="activatedfff" > !!! </span>  </label>
               <input type="text" class="form-control" 
               v-bind:value="value"
               v-on:input="$emit('inputss', $event.target.value), $emit('dia')"
