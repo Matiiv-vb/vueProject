@@ -1,13 +1,38 @@
 <template>
   <div id="app">
-   <div id="components-demo">
-     <button-counter
-     
-      v-for="(feald, i) in info"
-      v-bind:name="feald.name"
-      v-model='feald.value'
-      ></button-counter>
-   </div>
+    <div class="sample">
+          <form>
+          <div class="progress" >
+            <div class="progress-bar" role="progressbar" ></div>
+          </div>
+          <div>
+            <button-counter
+              v-for="(feald, i) in info"
+              v-bind:key="i"
+              v-bind:name="feald.name" 
+              v-bind:value="feald.value" 
+              v-bind:valid="feald.valid" 
+              v-bind:pattern="feald.pattern" 
+              v-on:inputss="feald.value = $event"
+              v-on:dia="diaMethod(feald, i)"
+              
+              
+            
+            ></button-counter>
+          </div>
+          <button class="btn btn-primary">
+            Send Data
+          </button>
+        </form>
+        <div>
+          <table class="table table-bordered">
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
 
   </div>
 
@@ -54,13 +79,23 @@ export default {
     }
   },
   methods: {
-
+    diaMethod(f, i) {
+      console.log(f.valid = f.pattern.test(f.value), "diaMethodddd");
+      return{
+        'red': !this.info[i].valid
+      }
+    }
 
   },
   computed: {
 
-   
-   
+    // validateClass(f, i){
+    //   console.log( 'classsssssss');
+    //   // return{
+    //   //   'red': !this.info[i].valid
+    //   // }
+    // },
+
   },
   beforeCreate() {
     console.log(app, 'beforeCreate');

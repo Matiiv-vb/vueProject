@@ -293,7 +293,7 @@ export default {
         this.progressStyleWidth = sumPart + '%'
         this.styleF()
       }
-       this.info[i].activated = true
+        this.info[i].activated = true
 
       // this.validCheck()
 
