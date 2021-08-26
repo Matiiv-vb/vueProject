@@ -3,7 +3,7 @@
     <div class="sample">
           <form>
           <div class="progress" >
-            <div class="progress-bar" role="progressbar" ></div>
+            <div class="progress-bar" role="progressbar"  v-bind:style="styleF"></div>
           </div>
           <div>
             <button-counter
@@ -16,8 +16,6 @@
               v-bind:activatedfff="feald.activated" 
               v-on:inputss="feald.value = $event"
               v-on:dia="diaMethod(feald, i)"
-              
-              
             
             ></button-counter>
           </div>
@@ -47,6 +45,7 @@ export default {
   name: 'app',
   data () {
     return {
+      progressStyleWidth: "0%",
       info: [
 					{
 						name: 'Name',
@@ -81,22 +80,40 @@ export default {
   },
   methods: {
     diaMethod(f, i) {
-      console.log(f.valid = f.pattern.test(f.value), "diaMethodddd");
+      f.valid = f.pattern.test(f.value);
+
+        let max = 100;
+        let par = this.validCheck();
+        let sumPart = par/this.info.length * 100
+
+        this.progressStyleWidth = sumPart + '%'
+      
+
       f.activated = true
       return{
         'red': !this.info[i].valid
       }
-    }
+    },
+    validCheck() {
+      let ready = 0 
+      this.info.forEach((e)=>{
+        if(e.valid){
+          ready++
+          console.log(ready);
+        }
+      })
+      return ready
+    },
+    
 
   },
   computed: {
+    styleF() {
+      return {
+        width: this.progressStyleWidth
+      }
+    },
 
-    // validateClass(f, i){
-    //   console.log( 'classsssssss');
-    //   // return{
-    //   //   'red': !this.info[i].valid
-    //   // }
-    // },
 
   },
   beforeCreate() {
