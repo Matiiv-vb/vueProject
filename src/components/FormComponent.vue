@@ -25,7 +25,7 @@ export default {
     computed: {
 
         validateClass(){
-        console.log(this, 'classsssssss');
+        // console.log(this, 'classsssssss');
         return{
             'red': !this.valid
         }

@@ -2,11 +2,19 @@
   <div id="app">
     <div class="sample">
           <form>
+            <div>
+              <b-spinner
+                
+                v-show="this.startActivated"
+              
+              ></b-spinner>
+            </div>
           <div class="progress" >
             <div class="progress-bar" role="progressbar"  v-bind:style="styleF"></div>
           </div>
           <div>
             <form-component
+              ref='fs'
               v-for="(feald, i) in info"
               v-bind:key="i"
               v-bind:name="feald.name" 
@@ -40,16 +48,18 @@
 <script>
 import FormComponent from './components/FormComponent.vue';
 
-// import FormComponent from "/src/components/FormComponent"
+import { BSpinner } from 'bootstrap-vue'
+// Vue.component('b-spinner', BSpinner)
 
 export default {
   components:{
-    FormComponent
-    // FormComponent
+    FormComponent,
+    BSpinner
   },
   name: 'app',
   data () {
     return {
+      startActivated: false,
       progressStyleWidth: "0%",
       info: [
 					{
@@ -59,7 +69,7 @@ export default {
 					},
 					{
 						name: 'Phone',
-						value: 'dd',
+						value: '444444',
 						pattern: /^[0-9]{7,14}$/
 					},
 					{
@@ -85,6 +95,7 @@ export default {
   },
   methods: {
     diaMethod(f, i) {
+      console.log(this.$refs, 'reeffs');
       f.valid = f.pattern.test(f.value);
 
         let max = 100;
@@ -95,6 +106,7 @@ export default {
       
 
       f.activated = true
+      this.activeSpin()
       return{
         'red': !this.info[i].valid
       }
@@ -109,6 +121,18 @@ export default {
       })
       return ready
     },
+    activeSpin() {
+      this.info.forEach((e)=>{
+        console.log(e.activated, 'aact');
+        if(e.activated == true && this.progressStyleWidth !== '100%'){
+          this.startActivated = true
+        } else 
+        if (this.progressStyleWidth == '100%'){
+          this.startActivated = false
+        }
+      })
+      
+    }
     
 
   },
@@ -117,7 +141,8 @@ export default {
       return {
         width: this.progressStyleWidth
       }
-    },
+    }
+  
 
 
   },
