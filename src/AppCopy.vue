@@ -6,7 +6,7 @@
             <div class="progress-bar" role="progressbar"  v-bind:style="styleF"></div>
           </div>
           <div>
-            <button-counter
+            <form-component
               v-for="(feald, i) in info"
               v-bind:key="i"
               v-bind:name="feald.name" 
@@ -17,7 +17,7 @@
               v-on:inputss="feald.value = $event"
               v-on:dia="diaMethod(feald, i)"
             
-            ></button-counter>
+            ></form-component>
           </div>
           <button class="btn btn-primary">
             Send Data
@@ -38,10 +38,15 @@
 </template>
 
 <script>
+import FormComponent from './components/FormComponent.vue';
 
-
+// import FormComponent from "/src/components/FormComponent"
 
 export default {
+  components:{
+    FormComponent
+    // FormComponent
+  },
   name: 'app',
   data () {
     return {
