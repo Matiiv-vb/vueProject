@@ -5,10 +5,14 @@
             <div>
               <b-spinner
                 
-                v-show="this.startActivated"
-              
+                
+                :small="!this.startActivated"
               ></b-spinner>
             </div>
+            <!-- <div>
+              <font-awesome-icon icon="user-secret" class="text-success" />
+            </div>
+            <p class="text-success" ref='fh'>hh</p> -->
           <div class="progress" >
             <div class="progress-bar" role="progressbar"  v-bind:style="styleF"></div>
           </div>
@@ -95,7 +99,7 @@ export default {
   },
   methods: {
     diaMethod(f, i) {
-      console.log(this.$refs, 'reeffs');
+      console.log(this.$refs.fh, 'reeffs');
       f.valid = f.pattern.test(f.value);
 
         let max = 100;
@@ -107,6 +111,9 @@ export default {
 
       f.activated = true
       this.activeSpin()
+
+      console.log(this.$attrs, 'atrsssssssss');
+      console.log(this.$listeners, '$listeners');
       return{
         'red': !this.info[i].valid
       }
