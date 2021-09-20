@@ -13,6 +13,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faAllergies, faUserSecret} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+import "animate.css" 
+
 library.add(faAllergies)
 library.add(faUserSecret)
 
