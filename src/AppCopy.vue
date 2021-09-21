@@ -2,7 +2,7 @@
   <div id="app">
     <div class="sample">
       <h1 class="my-element">bounce</h1>
-      <form>
+      <form @submit.prevent>
         <div>
           <b-spinner :small="!this.startActivated"></b-spinner>
         </div>
