@@ -4,6 +4,14 @@
       <h1 class="my-element">bounce</h1>
       <form @submit.prevent>
         <div>
+          <!-- <b-button v-b-modal.modal-1>Launch demo modal</b-button> -->
+
+          <b-modal id="modal-1" title="BootstrapVue">
+            <p class="my-4">Hello from modal!</p>
+          </b-modal>
+        </div>
+
+        <div>
           <b-spinner :small="!this.startActivated"></b-spinner>
         </div>
         <!-- <div>
@@ -32,14 +40,14 @@
           >
             <template v-slot:newSlot>
               <button class="btn btn-danger">sdf</button>
-              <ul>
+              <!-- <ul>
                 <ol>
                   punkt1
                 </ol>
                 <ol>
                   punkt2
                 </ol>
-              </ul>
+              </ul> -->
             </template>
 
             <template v-slot:sn>
@@ -47,7 +55,7 @@
             </template>
           </form-component>
         </div>
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" v-b-modal.modal-1>
           Send Data
         </button>
       </form>
