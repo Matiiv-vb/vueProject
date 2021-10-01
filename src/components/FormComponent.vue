@@ -17,16 +17,15 @@
 
     <slot name="sn"></slot>
     <div class="form-group">
-      <label
-        >{{ name }}
-        </label>
-        <p class="pClass">
-          <transition
+      <label>{{ name }} </label>
+      <p class="pClass">
+        <transition
           mode="out-in"
           enter-active-class="animate__animated  animate__shakeY"
         >
-          <div v-show="activatedfff">
+          <div>
             <transition
+              v-show="activatedfff"
               mode="out-in"
               enter-active-class="animate__animated  animate__flipInY"
               enter-leave-class="animate__animated  animate__flipOutY"
@@ -46,9 +45,8 @@
             </transition>
           </div>
         </transition>
-        </p>
-        
-      
+      </p>
+
       <input
         type="text"
         class="form-control"
@@ -107,8 +105,7 @@ export default {
 };
 </script>
 
-<style lang='scss'>
-
+<style lang="scss">
 .pClass {
   display: inline-block;
 }

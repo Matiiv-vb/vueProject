@@ -7,6 +7,18 @@
           <!-- <b-button v-b-modal.modal-1>Launch demo modal</b-button> -->
 
           <b-modal id="modal-1" title="BootstrapVue">
+            <template v-slot:modal-title>
+              <button class="btn btn-danger">sdf</button>
+              <ul>
+                <ol>
+                  punkt1
+                </ol>
+                <ol>
+                  punkt2
+                </ol>
+              </ul>
+            </template>
+            dddd
             <p class="my-4">Hello from modal!</p>
           </b-modal>
         </div>
@@ -59,14 +71,16 @@
           Send Data
         </button>
       </form>
-      <div>
+      <b-modal v-model="showModal">
         <table class="table table-bordered">
-          <tr>
-            <td></td>
-            <td></td>
-          </tr>
+          <tbody>
+            <tr v-for="(f, i) in info" :key="i">
+              <td>{{ f.name }}</td>
+              <td>{{ f.value }}</td>
+            </tr>
+          </tbody>
         </table>
-      </div>
+      </b-modal>
     </div>
   </div>
 </template>
@@ -75,17 +89,20 @@
 import FormComponent from "./components/FormComponent.vue";
 
 import { BSpinner } from "bootstrap-vue";
+import { BModal } from "bootstrap-vue";
 // Vue.component('b-spinner', BSpinner)
 
 export default {
   components: {
     FormComponent,
-    BSpinner
+    BSpinner,
+    BModal
   },
   name: "app",
   data() {
     return {
       startActivated: false,
+      showModal: true,
       progressStyleWidth: "0%",
       info: [
         {
