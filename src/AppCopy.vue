@@ -2,7 +2,7 @@
   <div id="app">
     <div class="sample">
       <h1 class="my-element">bounce</h1>
-      <form @submit.prevent>
+      <form v-if="!formDone" @submit.prevent>
         <div>
           <!-- <b-button v-b-modal.modal-1>Launch demo modal</b-button> -->
 
@@ -67,11 +67,16 @@
             </template>
           </form-component>
         </div>
-        <button class="btn btn-primary" v-b-modal.modal-1>
+        <button class="btn btn-primary" v-b-modal.modal-2>
           Send Data
         </button>
       </form>
-      <b-modal v-model="showModal">
+
+      <div v-else>
+        <h2>All Done</h2>
+      </div>
+
+      <b-modal id="modal-2" v-model="showModal" v-on:ok="onConfirm">
         <table class="table table-bordered">
           <tbody>
             <tr v-for="(f, i) in info" :key="i">
@@ -102,7 +107,8 @@ export default {
   data() {
     return {
       startActivated: false,
-      showModal: true,
+      showModal: false,
+      formDone: false,
       progressStyleWidth: "0%",
       info: [
         {
@@ -134,11 +140,13 @@ export default {
     };
   },
   methods: {
+    onConfirm(){
+      this.formDone = true
+    },
     diaMethod(f, i) {
       console.log(this.$refs.fh, "reeffs");
       f.valid = f.pattern.test(f.value);
 
-      let max = 100;
       let par = this.validCheck();
       let sumPart = (par / this.info.length) * 100;
 
@@ -146,7 +154,7 @@ export default {
 
       f.activated = true;
       this.activeSpin();
-
+      console.log(event, "thisEvent");
       console.log(this.$attrs, "atrsssssssss");
       console.log(this.$listeners, "$listeners");
       return {
