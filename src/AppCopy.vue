@@ -140,8 +140,8 @@ export default {
     };
   },
   methods: {
-    onConfirm(){
-      this.formDone = true
+    onConfirm() {
+      this.formDone = true;
     },
     diaMethod(f, i) {
       console.log(this.$refs.fh, "reeffs");
