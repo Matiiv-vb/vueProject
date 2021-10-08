@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <div v-for="post in myPost" :key="post.id">
+    <div v-for="post in sss" :key="post.id">
       <h2>{{ post.title }}</h2>
       <p>{{ post.body }}</p>
     </div>
-    <div v-for="post in allPosts" :key="post.id">
+    <div v-for="post in myPost" :key="post.id">
       <h2>{{ post.title }}</h2>
       <p>{{ post.body }}</p>
     </div>
@@ -21,7 +21,7 @@ export default {
     };
   },
   methods: {
-    // ...mapActions(['fetchPosts'])
+    ...mapActions(['fetchPosts']),
     showStore(){
       console.log(this.$store.getters);
     }
@@ -38,7 +38,8 @@ export default {
     },
     
   mounted() {
-    this.$store.dispatch("fetchPosts")
+    // this.$store.dispatch("fetchPosts")
+    this.fetchPosts(6);
     console.log(app, "mounted");
   }
 };
