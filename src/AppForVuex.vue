@@ -4,7 +4,11 @@
       <h2>{{ post.title }}</h2>
       <p>{{ post.body }}</p>
     </div>
-    <button>bbb</button>
+    <div v-for="post in allPosts" :key="post.id">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.body }}</p>
+    </div>
+    <button v-on:click="showStore">bbb</button>
   </div>
 </template>
 
@@ -18,6 +22,9 @@ export default {
   },
   methods: {
     // ...mapActions(['fetchPosts'])
+    showStore(){
+      console.log(this.$store.getters);
+    }
     
   },
   //   computed: {
@@ -26,11 +33,11 @@ export default {
   //     }
   //   },
     computed: {
-      ...mapGetters(['myPost', 'allPosts']),
+      ...mapGetters(['sss','myPost', 'allPosts']),
       
     },
     
-  async mounted() {
+  mounted() {
     this.$store.dispatch("fetchPosts")
     console.log(app, "mounted");
   }

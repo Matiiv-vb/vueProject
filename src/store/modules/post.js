@@ -26,6 +26,9 @@ export default {
     },
     allPosts(state) {
         return state.arr
+    },
+    sss(state){
+      return state.posts
     }
   }
 };
