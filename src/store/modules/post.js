@@ -1,6 +1,6 @@
 export default {
   actions: {
-    async fetchPosts(ctx, limit = 3) {
+    async fetchPosts(ctx, limit = 1) {
       const res = await fetch(
         "https://jsonplaceholder.typicode.com/posts?_limit=" + limit
       );
@@ -18,7 +18,8 @@ export default {
     }
   },
   state: {  
-    arr: [{title: 'ffff'}]
+    arr: [{title: 'ffff'}], 
+    posts: [{title: 'TTTTT'}]
   },
   getters: {
     myPost(state){

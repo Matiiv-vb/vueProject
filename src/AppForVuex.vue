@@ -4,10 +4,10 @@
       <h2>{{ post.title }}</h2>
       <p>{{ post.body }}</p>
     </div>
-    <div v-for="post in myPost" :key="post.id">
+    <!-- <div v-for="post in myPost" :key="post.id">
       <h2>{{ post.title }}</h2>
       <p>{{ post.body }}</p>
-    </div>
+    </div> -->
     <button v-on:click="showStore">bbb</button>
   </div>
 </template>
@@ -39,7 +39,7 @@ export default {
     
   mounted() {
     // this.$store.dispatch("fetchPosts")
-    this.fetchPosts(6);
+    this.fetchPosts(3);
     console.log(app, "mounted");
   }
 };
