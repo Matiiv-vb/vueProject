@@ -1,13 +1,15 @@
 <template>
   <div id="app">
     <header class="page-header">
-      <a href="" class="page-header__logo"></a>
-      <img
-        src="src/assets/img/logotype mobile.png"
-        width="226"
-        height="30"
-        alt="Barbershop"
-      />
+      <a href="" class="page-header__logo">
+        <img
+          src="src/assets/img/logotype mobile.png"
+          width="226"
+          height="30"
+          alt="Barbershop"
+        />
+      </a>
+
       <nav class="main-nav">
         <button class="main-nav__toggle">
           <span class="visually-hidden">Open menu</span>
@@ -288,6 +290,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>
