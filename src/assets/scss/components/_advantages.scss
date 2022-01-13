@@ -1,0 +1,48 @@
+.advantages {
+  background-color: $darkgrey;
+  color: #ffffff;
+  outline: 3px solid green;
+  outline-offset: -3px;
+}
+
+.advantages__wrapper {
+  @media screen and (min-width: $tablet-width) {
+    padding: 0 64px;
+  }
+  @media screen and (min-width: $desktop-width) {
+    padding: 0 64px;
+    margin: 0 auto;
+    max-width: 960px;
+  }
+}
+
+.advantages__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: 4px solid red;
+  outline-offset: -4px;
+  @media screen and (min-width: $desktop-width){
+      display: flex;
+      flex-direction: row;
+  }
+}
+
+.advantages__item {
+  outline: 5px solid blue;
+  outline-offset: -5px;
+}
+
+.slider__toggles {
+  @media screen and (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $tablet-width) {
+    .advantages__item--cool, .advantages__item--price {
+        display: none;
+    }
+}
+
+

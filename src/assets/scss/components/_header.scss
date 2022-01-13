@@ -1,17 +1,71 @@
 .page-header {
-    background-color: #242424;
-    color: #fff;
+  display: flex;
+  flex-direction: column;
+  background-color: #242424;
+  color: #fff;
 }
 
 .page-header__logo {
-    background: $darkgrey;
-    outline: 5px solid red;
-    outline-offset: -5px;
-    
+  height: 85px;
+  background: $darkgrey;
+//   outline: 5px solid green;
+//   outline-offset: -5px;
+  @media (min-width: $tablet-width) {
+    order: 2;
+    height: 400px;
+  }
+  @media (min-width: $desktop-width) {
+    height: 648px;
+  }
 }
 
 .main-nav {
-    outline: 5px solid green;
-    outline-offset: -5px;
+//   outline: 2px solid red;
+//   outline-offset: -2px;
 }
 
+.site-list {
+//   outline: 5px solid blue;
+//   outline-offset: -5px;
+  @media (min-width: $tablet-width) {
+    width: 570px;
+  }
+  @media (min-width: $desktop-width) {
+    width: 780px;
+  }
+}
+
+.user-list {
+//   outline: 5px solid blue;
+//   outline-offset: -5px;
+  @media (min-width: $tablet-width) {
+    width: 60px;
+  }
+}
+
+.main-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.main-nav__list a {
+  color: #ffffff;
+}
+
+@media (min-width: $tablet-width) {
+  .main-nav__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 640px;
+    margin: 0 auto;
+  }
+  .main-nav__toggle {
+      display: none;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .main-nav__wrapper {
+    width: 960px;
+  }
+}

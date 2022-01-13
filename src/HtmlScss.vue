@@ -17,26 +17,29 @@
         <div class="main-nav__wrapper">
           <ul class="main-nav__list site-list">
             <li class="site-list__item site-list__item--active">
-              <a href=""> Main page </a>
+              <a> Main page </a>
             </li>
-            <li class="site-list__item site-list__item">
+            <li class="site-list__item">
               <a href=""> Our works </a>
             </li>
-            <li class="site-list__item site-list__item">
+            <li class="site-list__item">
               <a href=""> Sign up </a>
             </li>
-            <li class="site-list__item site-list__item">
+            <li class="site-list__item">
               <a href=""> Contacts </a>
             </li>
-            <li class="site-list__item site-list__item">
+            <li class="site-list__item">
               <a href=""> Academy </a>
             </li>
           </ul>
-          <div class="main-nav__list user-list">
-            <a href="login.html" class="user-list__login">
-              <img src="" alt="" />
-            </a>
-          </div>
+          <ul class="main-nav__list user-list">
+            <li class="user-list__item">
+              <a href="login.html" class="user-list__login">
+                Log In
+                <img src="" alt="" />
+              </a>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
@@ -46,7 +49,7 @@
 
       <section class="stats">
         <div class="stats__wrapper">
-          <header class="stats-header">
+          <header class="stats__header">
             <h2 class="visually-hidden">Statistic Barber</h2>
             <p class="stats__slogan">
               Cut in us <br />
@@ -56,45 +59,47 @@
               Mens cut <br />
               statistic
             </p>
-            <p class="satats__legend">
+            <p class="stats__legend stats__legend--top">
               <small> * - data is false </small>
             </p>
           </header>
+
+          <dl class="stats__list">
+            <div class="stats__item">
+              <dt class="stats__number">1500<sub>*</sub></dt>
+              <dd class="stats__desription">
+                dollars <br />
+                deposit
+              </dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__number">7200</dt>
+              <dd class="stats__desription">
+                second <br />
+                time master
+              </dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__number">90 000</dt>
+              <dd class="stats__desription">
+                Cut <br />
+                heirs
+              </dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__number">500 000<sub>*</sub></dt>
+              <dd class="stats__desription">
+                likes and <br />
+                comments
+              </dd>
+            </div>
+          </dl>
+          <p class="stats__legend stats__legend--bottom">
+            <small> * - data is false </small>
+          </p>
         </div>
-        <dl class="stats__list">
-          <div class="stats__item">
-            <dt class="stats__number">1500<sub>*</sub></dt>
-            <dd class="stats__desription">
-              dollars <br />
-              deposit
-            </dd>
-          </div>
-          <div class="stats__item">
-            <dt class="stats__number">7200</dt>
-            <dd class="stats__desription">
-              second <br />
-              time master
-            </dd>
-          </div>
-          <div class="stats__item">
-            <dt class="stats__number">90 000</dt>
-            <dd class="stats__desription">
-              Cut <br />
-              heirs
-            </dd>
-          </div>
-          <div class="stats__item">
-            <dt class="stats__number">500 000<sub>*</sub></dt>
-            <dd class="stats__desription">
-              likes and <br />
-              comments
-            </dd>
-          </div>
-        </dl>
-        <p class="satats__legend satats__legend--bottom">
-          <small> * - data is false </small>
-        </p>
       </section>
+
       <section class="advantages">
         <div class="advantages__wrapper slider">
           <h2 class="visually-hidden">Our advantages</h2>
@@ -130,6 +135,7 @@
           </p>
         </div>
       </section>
+      
       <section class="news">
         <div class="news__wrapper">
           <h2 class="news__title">News and Promotions</h2>
