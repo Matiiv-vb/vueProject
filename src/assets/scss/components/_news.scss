@@ -1,0 +1,16 @@
+.news {
+  background-color: $lightgrey;
+  outline: 3px solid green;
+  outline-offset: -3px;
+}
+
+.news__wrapper {
+  display: grid;
+  @media screen and (min-width: $tablet-width) {
+    padding: 0 64px;
+  }
+  @media screen and (min-width: $desktop-width) {
+    margin: 0 auto;
+    max-width: 960px;
+  }
+}
