@@ -1,16 +1,54 @@
 .news {
   background-color: $lightgrey;
-  outline: 3px solid green;
-  outline-offset: -3px;
+  // outline: 3px solid green;
+  // outline-offset: -3px;
 }
 
 .news__wrapper {
-  display: grid;
+  
   @media screen and (min-width: $tablet-width) {
+    display: grid;
+    grid-template-areas: 
+    "news__title news__to-all"
+    "news__list news__list";
+    grid-gap: 2vw;
     padding: 0 64px;
   }
   @media screen and (min-width: $desktop-width) {
     margin: 0 auto;
     max-width: 960px;
   }
+}
+
+.news__title {
+  // outline: 3px solid red;
+  // outline-offset: -3px;
+  grid-area: news__title;
+}
+.news__list {
+  // outline: 3px solid red;
+  // outline-offset: -3px;
+  grid-area: news__list;
+  @media screen and (min-width: $tablet-width){
+    display: flex;
+  
+  }
+
+}
+.news__to-all {
+  // outline: 3px solid red;
+  // outline-offset: -3px;
+  grid-area: news__to-all;
+}
+
+.button {
+  height: 30px;
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50; /* Green */
+}
+
+.news__item {
+  // outline: 3px solid green;
+  // outline-offset: -3px;
 }

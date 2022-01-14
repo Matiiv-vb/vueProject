@@ -135,7 +135,7 @@
           </p>
         </div>
       </section>
-      
+
       <section class="news">
         <div class="news__wrapper">
           <h2 class="news__title">News and Promotions</h2>
@@ -175,7 +175,7 @@
       <section class="reviews">
         <div class="reviews__wrapper slider">
           <h2 class="reviews__title">Reviews about us</h2>
-          <a href="form.html" class="reviews__write button"></a>
+          <a href="form.html" class="reviews__write button">Write my reviews</a>
           <div class="reviews__list slider__list">
             <blockquote class="reviews__item slider__item">
               <img
@@ -193,7 +193,7 @@
                 </p>
               </div>
             </blockquote>
-            <blockquote class="reviews__item slider__item">
+            <!-- <blockquote class="reviews__item slider__item">
               <img
                 class="reviews__author-image"
                 src="src/assets/img/photo.png"
@@ -224,7 +224,7 @@
                   soluta aliquam neque error. Suscipit.
                 </p>
               </div>
-            </blockquote>
+            </blockquote> -->
           </div>
           <p class="reviews__toggles slider__toggles">
             <button class="slider__toggle slider__toggle--active" type="button">
@@ -273,10 +273,10 @@
               >
             </li>
           </ul>
-          <div class="page-footer__copyright copyright">
-            <b class="copyright__text">Develop in:</b>
-            <a href="#" class="copyright__link">copyright link</a>
-          </div>
+        </div>
+        <div class="page-footer__copyright copyright">
+          <b class="copyright__text">Develop in:</b>
+          <a href="#" class="copyright__link">Academia link</a>
         </div>
       </div>
     </footer>
