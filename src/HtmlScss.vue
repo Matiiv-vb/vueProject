@@ -10,7 +10,7 @@
         />
       </a>
 
-      <nav class="main-nav">
+      <nav class="main-nav main-nav--closedR main-nav--opened main-nav--nojs">
         <button class="main-nav__toggle">
           <span class="visually-hidden">Open menu</span>
         </button>
@@ -35,8 +35,8 @@
           <ul class="main-nav__list user-list">
             <li class="user-list__item">
               <a href="login.html" class="user-list__login">
-                Log In
-                <img src="" alt="" />
+                <img src="/src/assets/img/login icon.svg" alt="" />
+                LogIn
               </a>
             </li>
           </ul>
