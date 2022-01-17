@@ -10,8 +10,8 @@
         />
       </a>
 
-      <nav class="main-nav main-nav--closedR main-nav--opened main-nav--nojs">
-        <button class="main-nav__toggle">
+      <nav v-bind:class="toggleClassMenu" class="main-nav main-nav--nojs">
+        <button v-on:click="clickedMenu = !clickedMenu" class="main-nav__toggle">
           <span class="visually-hidden">Open menu</span>
         </button>
         <div class="main-nav__wrapper">
@@ -286,11 +286,19 @@
 <script>
 export default {
   data: function() {
-    return {};
+    return {
+      clickedMenu: true
+    };
   },
-  methods: {},
+  methods: {
+    
+  },
 
-  computed: {},
+  computed: {
+    toggleClassMenu () {
+      return this.clickedMenu ? "main-nav--opened" : "main-nav--closed"
+    }
+  },
 
   mounted() {}
 };
