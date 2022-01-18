@@ -2,10 +2,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import MainPage from "../components/MainPage";
+import Works from "../components/Works";
 
 Vue.use(VueRouter);
 
-const works = { template: "<div>works</div>" };
 const Signup = { template: "<div>Signup</div>" };
 const Contacts = { template: "<div>Contacts</div>" };
 const Academy = { template: "<div>Academy</div>" };
@@ -19,7 +19,8 @@ const routes = [
   {
     name: "works",
     path: "/works",
-    component: works
+    component: Works,
+	props: { name: "hhh" }
   },
   {
     name: "Signup",

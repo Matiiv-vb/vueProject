@@ -10,6 +10,9 @@
         />
       </a>
 
+      <div  >{{ MyTitle }}</div>
+      
+
       <nav v-bind:class="toggleClassMenu" class="main-nav main-nav--nojs">
         <button
           v-on:click="clickedMenu = !clickedMenu"
@@ -41,6 +44,8 @@
         </div>
       </nav>
     </header>
+
+    <!-- <Works v-on:changeTitle="changeTitleParent($event)"></Works> -->
 
     <router-view></router-view>
 
@@ -92,14 +97,17 @@
 
 <script>
 import MainPage from "./components/MainPage.vue";
+import Works from "./components/Works.vue";
 
 export default {
   components: {
-    // MainPage
+    Works
+
   },
   data: function() {
     return {
       clickedMenu: true,
+      MyTitle: "Title",
       menuItem: [
         { id: 1, page: "Mainpage", route: "main-page" },
         { id: 2, page: "works", route: "works" },
@@ -109,7 +117,12 @@ export default {
       ]
     };
   },
-  methods: {},
+  methods: {
+    changeTitleParent(e) {
+      console.log('CTP', e);
+      this.MyTitle = e
+    }
+  },
 
   computed: {
     toggleClassMenu() {
