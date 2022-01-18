@@ -9,8 +9,8 @@
   height: 85px;
   text-align: center;
   // background: $darkgrey;
-  outline: 2px solid green;
-  outline-offset: -2px;
+  // outline: 2px solid green;
+  // outline-offset: -2px;
   @media (min-width: $tablet-width) {
     order: 2;
     height: 400px;
@@ -22,7 +22,7 @@
   }
   @media (min-width: $desktop-width) {
     height: 648px;
-    margin-top: 57px;
+    // margin-top: 57px;
     background-position: 50% 0;
   }
 }
@@ -38,8 +38,12 @@
   min-height: 51px;
   background-color: #826550;
 
-  outline: 2px solid red;
-  outline-offset: -2px;
+  // outline: 2px solid red;
+  // outline-offset: -2px;
+
+  @media (min-width: $tablet-width) {
+    background-color: #000000;
+  }
 }
 
 .main-nav__toggle {
@@ -49,7 +53,7 @@
   z-index: 2;
   width: 70px;
   height: 50px;
-  background-color: #6A4D38;
+  background-color: #6a4d38;
   cursor: pointer;
   border: none;
 
@@ -57,23 +61,25 @@
   &:active {
     background-color: #624530;
   }
-  
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
 }
 
 .main-nav--closed .main-nav__toggle::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 15px;
   left: 17px;
   width: 36px;
   height: 2px;
   background-color: #ffffff;
-  box-shadow: 0 8px 0 0 #ffffff, 0 16px 0 0 #ffffff
+  box-shadow: 0 8px 0 0 #ffffff, 0 16px 0 0 #ffffff;
 }
 
 .main-nav--closed .main-nav__toggle:active::before {
-  background-color: rgba(#ffffff, .3);
-  box-shadow: 0 8px 0 0 rgba(#ffffff, .3), 0 16px 0 0 rgba(#ffffff, .3)
+  background-color: rgba(#ffffff, 0.3);
+  box-shadow: 0 8px 0 0 rgba(#ffffff, 0.3), 0 16px 0 0 rgba(#ffffff, 0.3);
 }
 
 .main-nav--opened .main-nav__toggle {
@@ -84,7 +90,7 @@
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     height: 2px;
     width: 36px;
@@ -102,9 +108,8 @@
 
   &:active::after,
   &:active::before {
-    background-color: rgba(#ffffff, .3);
+    background-color: rgba(#ffffff, 0.3);
   }
-
 }
 
 @media (max-width: $mobile-width) {
@@ -130,20 +135,19 @@
     left: 70px;
     z-index: 10;
     min-height: 80vh;
-    background-color: #6A4D38;
+    background-color: #6a4d38;
   }
 
   .main-nav--opened .main-nav__wrapper::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     z-index: 12;
     width: 7px;
     height: 100%;
-    box-shadow: inset 4px 0px 7px -2px rgba(#000000, .4);
+    box-shadow: inset 4px 0px 7px -2px rgba(#000000, 0.4);
   }
-  
 }
 
 .site-list {
@@ -152,24 +156,74 @@
   //   outline-offset: -5px;
   @media (min-width: $tablet-width) {
     width: 570px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
   @media (min-width: $desktop-width) {
     width: 780px;
   }
 }
 
+.site-list__item {
+  @media (min-width: $tablet-width) {
+    margin-right: 32px;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--active {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background: #826550;
+    }
+  }
+}
+
+.site-list__item a[href] {
+  @media (min-width: $tablet-width) {
+    &:hover {
+      color: #826550;
+
+      background-color: #000000;
+    }
+
+    &:active {
+      color: #ffffff;
+
+      background-color: #000000;
+      opacity: .3;
+    }
+  }
+}
+
 .site-list a {
   position: relative;
   display: block;
-  padding: 12px 21px 13px 21px; 
+  padding: 12px 21px 13px 21px;
   font-size: 18px;
   line-height: 24px;
   color: #ffffff;
   text-transform: uppercase;
   text-decoration: none;
   background-color: #826550;
-  border-top: 1px solid #886E5B;
-  border-bottom: 1px solid #71543F;
+  border-top: 1px solid #886e5b;
+  border-bottom: 1px solid #71543f;
+  @media (min-width: $tablet-width) {
+    padding: 0;
+    padding-top: 25px;
+    padding-bottom: 23px;
+    background: none;
+    border: none;
+  }
 }
 
 .user-list {
@@ -177,7 +231,27 @@
   //   outline-offset: -5px;
   @media (min-width: $tablet-width) {
     width: 60px;
+    height: 70px;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      position: absolute;
+      opacity: 0;
+    }
+
   }
+
+  @media (min-width: $desktop-width) {
+    span {
+      margin-left: 20px;
+      opacity: 1;
+    }
+  }
+
 }
 
 .user-list__login {
