@@ -2,9 +2,24 @@ import Vue from "vue";
 import store from "./store";
 import App from "./HtmlScss.vue";
 import "./assets/scss/app.scss";
-import routes from "./router/index";
+import router from "./router/index";
+// import VueRouter from "vue-router";
 
+import MainPage from "./components/MainPage.vue";
 
+// Vue.use(VueRouter);
+
+// const routes = [
+//   {
+//     path: "",
+//     component: MainPage,
+//   },
+// ];
+
+// const router = new VueRouter({
+//   routes,
+//   mode: "history",
+// });
 
 // import App from "./AppCopy.vue";
 // import App from "./App.vue";
@@ -30,7 +45,7 @@ Vue.use(BootstrapVue);
 // Vue.config.productionTip = false;
 
 new Vue({
-  routes,
+  router,
   store,
   el: "#app",
   render: h => h(App)
