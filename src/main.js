@@ -2,9 +2,10 @@ import Vue from "vue";
 import store from "./store";
 import App from "./HtmlScss.vue";
 import "./assets/scss/app.scss";
-import VueRouter from 'vue-router'
+import routes from "./router/index";
 
-Vue.use(VueRouter)
+
+
 // import App from "./AppCopy.vue";
 // import App from "./App.vue";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
@@ -29,6 +30,7 @@ Vue.use(BootstrapVue);
 // Vue.config.productionTip = false;
 
 new Vue({
+  routes,
   store,
   el: "#app",
   render: h => h(App)

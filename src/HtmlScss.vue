@@ -10,6 +10,8 @@
         />
       </a>
 
+      <router-link to="/bar">Go to Bar</router-link>
+
       <nav v-bind:class="toggleClassMenu" class="main-nav main-nav--nojs">
         <button
           v-on:click="clickedMenu = !clickedMenu"
@@ -19,11 +21,38 @@
         </button>
         <div class="main-nav__wrapper">
           <ul class="main-nav__list site-list">
+            <!-- <router-link
+              v-for="item in menuItem"
+              :key="item.id"
+              :to="{ name: item.route }"
+              tag="li"
+              class="site-list__item"
+              exact-active-class="site-list__item--active"
+            >
+              <a>{{ item.page }}</a>
+            </router-link> -->
 
-            <li class="site-list__item" v-for="item in menuItem" :key="item.id">
+            <!-- <li class="site-list__item" v-for="item in menuItem" :key="item.id">
               <a href="#">{{ item.page }}</a>
-            </li>
-           
+            </li> -->
+
+             <!-- <router-link
+                    v-for="item in menuItem"
+                    :key="item.id"
+                    :to="{ name: item.route }"
+                    v-slot="{ route, isExactActive, navigate }"
+                    :custom="true"
+                  >
+                    <li
+                      class="list-group-item"
+                      :class="isExactActive ? 'active' : ''"
+                    >
+                      <a :href="route.fullPath" @click="navigate">{{
+                        item.id
+                      }}</a>
+                     
+                    </li>
+                  </router-link> -->
           </ul>
           <ul class="main-nav__list user-list">
             <li class="user-list__item">
@@ -37,7 +66,9 @@
       </nav>
     </header>
 
-    <MainPage></MainPage>
+    <router-view></router-view>
+
+    <!-- <MainPage></MainPage> -->
 
     <footer class="page-footer">
       <div class="page-footer__wrapper">
@@ -90,18 +121,18 @@ import MainPage from "./components/MainPage.vue";
 
 export default {
   components: {
-   MainPage
+    // MainPage
   },
   data: function() {
     return {
       clickedMenu: true,
       menuItem: [
-      { id :1, page: 'Mainpage' },
-      { id :2, page: 'works' },
-      { id :3, page: 'Signup' },
-      { id :4, page: 'Contacts' },
-      { id :5, page: 'Academy' },
-    ]
+        { id: 1, page: "Mainpage", route: "main-page" },
+        { id: 2, page: "works" },
+        { id: 3, page: "Signup" },
+        { id: 4, page: "Contacts" },
+        { id: 5, page: "Academy" }
+      ]
     };
   },
   methods: {},
