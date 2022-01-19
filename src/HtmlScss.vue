@@ -10,7 +10,7 @@
         />
       </a>
 
-      <div  >{{ MyTitle }}</div>
+      <!-- <div  >{{ MyTitle }}</div> -->
       
 
       <nav v-bind:class="toggleClassMenu" class="main-nav main-nav--nojs">
@@ -106,7 +106,7 @@ export default {
   },
   data: function() {
     return {
-      clickedMenu: true,
+      clickedMenu: false,
       MyTitle: "Title",
       menuItem: [
         { id: 1, page: "Mainpage", route: "main-page" },

@@ -22,8 +22,8 @@
   }
   @media (min-width: $desktop-width) {
     height: 648px;
-    // margin-top: 57px;
     background-position: 50% 0;
+    background-size: cover;
   }
 }
 
@@ -159,6 +159,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    flex-grow: 1;
   }
   @media (min-width: $desktop-width) {
     width: 780px;
@@ -200,7 +201,32 @@
       color: #ffffff;
 
       background-color: #000000;
-      opacity: .3;
+      opacity: 0.3;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    // position: relative;
+    // width: auto;
+    // height: auto;
+    // padding: 25px, 30px, 23px, 50px;
+    // font-size: 18px;
+    // line-height: 24px;
+    // font-weight: bold;
+    // text-transform: uppercase;
+    // text-decoration: none;
+
+    &:hover {
+      color: #000000;
+
+      background-color: #ffffff;
+    }
+
+    &:active {
+      color: rgba(0, 0, 0, 0.3);
+
+      background-color: #ffffff;
+      opacity: 1;
     }
   }
 }
@@ -242,16 +268,16 @@
       position: absolute;
       opacity: 0;
     }
-
   }
 
   @media (min-width: $desktop-width) {
+    width: auto;
+    max-width: 160px;
     span {
       margin-left: 20px;
       opacity: 1;
     }
   }
-
 }
 
 .user-list__login {
@@ -268,25 +294,29 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
+  outline: 5px solid blue;
+  outline-offset: -5px;
 }
 .main-nav__list a {
   color: #ffffff;
 }
 
-@media (min-width: $tablet-width) {
-  .main-nav__wrapper {
+.main-nav__wrapper {
+  @media (min-width: $tablet-width) {
     display: flex;
     justify-content: space-between;
-    width: 640px;
+    width: 84%;
+    max-width: 960px;
     margin: 0 auto;
+    outline: 2px solid red;
+    outline-offset: -2px;
   }
-  .main-nav__toggle {
-    display: none;
-  }
-}
 
-@media (min-width: $desktop-width) {
-  .main-nav__wrapper {
+  @media (min-width: $desktop-width) {
     width: 960px;
   }
+
 }
+
+

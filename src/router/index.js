@@ -13,7 +13,7 @@ const Academy = { template: "<div>Academy</div>" };
 const routes = [
   {
     name: "main-page",
-    path: "/main-page",
+    path: "/",
     component: MainPage
   },
   {
