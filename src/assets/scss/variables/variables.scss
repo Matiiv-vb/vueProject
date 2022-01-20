@@ -1,7 +1,7 @@
 //colors
 
 $darkgrey: #292929;
-$lightgrey: #f8f5f2; 
+$lightgrey: #f8f5f2;
 
 //Viewports
 
@@ -15,3 +15,13 @@ $desktop-width: 1200px;
 //     font-size: normal;
 //     font-display: swap;
 // }
+
+@mixin outlinered {
+  outline: 3px solid red;
+  outline-offset: -3px;
+}
+
+@mixin outlinegreen {
+  outline: 3px solid green;
+  outline-offset: -3px;
+}

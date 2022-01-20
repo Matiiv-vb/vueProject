@@ -81,6 +81,7 @@
   line-height: 40px;
   display: flex;
   align-items: center;
+  @include outlinered
 }
 
 .stats__desription {
